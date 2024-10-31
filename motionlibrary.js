@@ -37,7 +37,6 @@ $(".counterup").each(function (index) {
   });
 
 //Orb Tracking Animation
-
   document.addEventListener('DOMContentLoaded', () => {
     const orb = document.querySelector('.gradient-orb');
     const wrap = document.querySelector('.gradient-wrap');
