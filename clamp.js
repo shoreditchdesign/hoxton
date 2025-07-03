@@ -20,9 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
       const fontSize = parseFloat(
         computedStyle.getPropertyValue(`--${tag}--font-size`),
       );
-      const lineHeight = parseFloat(
-        computedStyle.getPropertyValue(`--${tag}--line-height`),
-      );
 
       document.querySelectorAll(`${tag}, .u-hs-${tag}`).forEach((el) => {
         if (isDesktop) {
@@ -30,15 +27,9 @@ document.addEventListener("DOMContentLoaded", function () {
             minSize,
             Math.min(fontSize, (fontSize * vw) / baseWidth),
           );
-          const responsiveLH = Math.max(
-            minSize,
-            Math.min(lineHeight, (lineHeight * vw) / baseWidth),
-          );
           el.style.fontSize = `${responsiveSize}rem`;
-          el.style.lineHeight = `${responsiveLH}rem`;
         } else {
           el.style.fontSize = "";
-          el.style.lineHeight = "";
         }
       });
     });
